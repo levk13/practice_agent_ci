@@ -28,4 +28,4 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           REPO_DIR: ${{ github.workspace }}
         run: |
-          python_tools/ci_helper.py
+          python python_tools/ci_helper.py
