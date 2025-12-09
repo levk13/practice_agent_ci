@@ -22,7 +22,12 @@ jobs:
       - name: Install deps
         run: |
           python -m pip install --upgrade pip
-          python -m pip install pyautogen openai pytest
+          # Official Microsoft AutoGen (v0.2 line with autogen.* API)
+          python -m pip install "autogen-agentchat~=0.2" "autogen-ext[openai]" pytest
+
+      - name: Sanity check autogen
+        run: |
+          python -c "import autogen; print('autogen imported OK, dir:', dir(autogen)[:10])"
 
       - name: Run AI review
         env:
