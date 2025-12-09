@@ -1,7 +1,9 @@
+import os
+
 config_list = [
     {
         "model": "gpt-4.1-mini",          # or gpt-4.1, gpt-4.1-preview, etc.
-        "api_key": "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",
+        "api_key": os.getenv("OPENAI_API_KEY"),
     }
 ]
 
